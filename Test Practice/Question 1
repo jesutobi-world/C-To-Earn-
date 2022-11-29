@@ -1,0 +1,35 @@
+//Write a program to find the value of x in the formula x = n!(r! + n!)
+
+using System;
+
+public class Formula
+{
+    public static void Main(string[] args)
+    {
+    
+        // Function to calculate the factorial of a given positive integer 
+        static int Factorial(int num){
+            if (num == 0){
+                return 1;
+            }
+            else{
+                return num * Factorial(num-1);
+            }
+        }
+        
+        // Receive user inputs for num 1 and num 2
+        Console.WriteLine("Enter the first number: ");
+        int integer_1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the second number: ");
+        int integer_2 = Convert.ToInt32(Console.ReadLine());
+        
+        // Calculate the factorials of the integers
+        int factorial_1 = Factorial(integer_1);
+        int factorial_2 = Factorial(integer_2);
+        
+        //Print out the value of the formula
+        Console.WriteLine("The answer is ");
+        Console.WriteLine(factorial_1 * (factorial_1 + factorial_2));
+        
+    }
+}
